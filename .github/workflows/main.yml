@@ -30,4 +30,4 @@ jobs:
             docker pull mahfuz4433/test-app:latest
             docker stop test-app
             docker rm test-app
-            docker run -d --name test-app --env-file .env -p 80:80 mahfuz4433/test-app:latest
+            docker run -d --name test-app -p 80:80 mahfuz4433/test-app:latest
