@@ -20,14 +20,14 @@ jobs:
           push: true
           tags: mahfuz4433/test-app:latest
 
-      # - name: SSH and deploy to Digital
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     host: ${{ secrets.IP }}
-      #     username: ${{ secrets.USER }}
-      #     key: ${{ secrets.SSH_KEY }}
-      #     script: |
-      #       docker pull mahfuz4433/test-app:latest
-      #       docker stop test-app
-      #       docker rm test-app
-      #       docker run -d --name test-app --env-file .env -p 3000:3000 mahfuz4433/test-app:latest
+      - name: SSH and deploy to Digital
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.IP }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            docker pull mahfuz4433/test-app:latest
+            docker stop test-app
+            docker rm test-app
+            docker run -d --name test-app --env-file .env -p 80:80 mahfuz4433/test-app:latest
