@@ -17,7 +17,9 @@ function App() {
         </a>
       </div>
       <h1>Vite + Mahfuz anam</h1>
-      <h1>this is testing phase for docker and cicd with github action.</h1>
+      <h1 className="text-lg font-semibold">
+        this is testing phase for docker and cicd with github action.
+      </h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
